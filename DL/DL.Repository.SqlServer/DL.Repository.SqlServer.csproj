@@ -1,0 +1,17 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp2.2</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Dapper.SimpleCRUD" Version="2.0.1" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\DL.Common\DL.Common.csproj" />
+    <ProjectReference Include="..\DL.IRepository\DL.IRepository.csproj" />
+    <ProjectReference Include="..\DL.Models\DL.Models.csproj" />
+  </ItemGroup>
+
+</Project>

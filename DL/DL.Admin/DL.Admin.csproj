@@ -1,0 +1,36 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp2.2</TargetFramework>
+    <AspNetCoreHostingModel>InProcess</AspNetCoreHostingModel>
+  </PropertyGroup>
+
+
+  <ItemGroup>
+    <PackageReference Include="Autofac.Extensions.DependencyInjection" Version="4.3.1" />
+    <PackageReference Include="Autofac.Extras.DynamicProxy" Version="4.5.0" />
+    <PackageReference Include="log4net" Version="2.0.8" />
+    <PackageReference Include="Microsoft.AspNetCore.App" />
+    <PackageReference Include="Microsoft.AspNetCore.Razor.Design" Version="2.2.0" PrivateAssets="All" />
+    <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="2.2.0" />
+  </ItemGroup>
+
+
+  <ItemGroup>
+    <Folder Include="Areas\SysManager\Data\" />
+    <Folder Include="Areas\SysManager\Models\" />
+    <Folder Include="Areas\SysMenuManager\Data\" />
+    <Folder Include="Areas\SysMenuManager\Models\" />
+  </ItemGroup>
+
+
+  <ItemGroup>
+    <ProjectReference Include="..\DL.Common\DL.Common.csproj" />
+    <ProjectReference Include="..\DL.IRepository\DL.IRepository.csproj" />
+    <ProjectReference Include="..\DL.IService\DL.IServices.csproj" />
+    <ProjectReference Include="..\DL.Models\DL.Models.csproj" />
+    <ProjectReference Include="..\DL.Repository.SqlServer\DL.Repository.SqlServer.csproj" />
+    <ProjectReference Include="..\DL.Services\DL.Services.csproj" />
+  </ItemGroup>
+
+</Project>

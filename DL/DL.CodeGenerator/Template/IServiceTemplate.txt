@@ -1,0 +1,18 @@
+﻿/*
+*┌──────────────────────────────────────────────────────────────┐
+*│　描    述：{Comment}                                                    
+*│　作    者：{Author}                                              
+*│　版    本：1.0                                                 
+*│　创建时间：{GeneratorTime}                           
+*└──────────────────────────────────────────────────────────────┘
+*/
+
+using DL.Models;
+using System;
+
+namespace {IServicesNamespace}
+{
+    public interface I{ModelName}Services : IBaseServices<{ModelName}, {KeyTypeName}>
+    {
+    }
+}
