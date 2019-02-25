@@ -3,7 +3,7 @@
 *│　描    述：                                                    
 *│　作    者：duling                                              
 *│　版    本：1.0                                                 
-*│　创建时间：2018-12-28 09:42:34                            
+*│　创建时间：2019-02-24 23:20:39                            
 *└──────────────────────────────────────────────────────────────┘
 */
 
@@ -15,27 +15,20 @@ namespace DL.Models
 {
 	/// <summary>
 	/// duling
-	/// 2018-12-28 09:42:34
+	/// 2019-02-24 23:20:39
 	/// 
 	/// </summary>
 	[Table("SysAuthor")]
 	public class SysAuthor
 	{
-		/// <summary>
-		///  
-		/// </summary>
 		[Key]
 		public Int32 Id {get;set;}
 
-		/// <summary>
-		///  
-		/// </summary>
-		public Int32? RoleId {get;set;}
+		[Required]
+		public Int32 MenuId {get;set;}
 
-		/// <summary>
-		///  
-		/// </summary>
-		public Int32? MenuId {get;set;}
+		[Required]
+		public Int32 RoleId {get;set;}
 
 
 	}

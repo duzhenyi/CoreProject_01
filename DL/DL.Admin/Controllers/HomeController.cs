@@ -8,18 +8,18 @@ namespace DL.Admin.Controllers
 
 	public class HomeController : Controller
     {
-        private readonly ISysManagerServices _sysManagerService;
-        private readonly ISysMenuServices _sysMenuService;
+        private readonly ISysManagerServices _SysManagerService;
+        private readonly ISysMenuServices _SysMenuService;
 
-        public HomeController(ISysManagerServices sysManagerService, ISysMenuServices sysMenuService)
+        public HomeController(ISysManagerServices SysManagerService, ISysMenuServices SysMenuService)
         {
-            this._sysManagerService = sysManagerService;
-            this._sysMenuService = sysMenuService;
+            this._SysManagerService = SysManagerService;
+            this._SysMenuService = SysMenuService;
         }
         public IActionResult Index()
         {
-            var list = _sysManagerService.GetList();
-            var menulist = _sysMenuService.GetList();
+            var list = _SysManagerService.GetList();
+            var menulist = _SysMenuService.GetList();
             return View();
         }
 		public IActionResult AdminLogin()

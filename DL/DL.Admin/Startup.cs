@@ -57,8 +57,6 @@ namespace DL.Admin
 			//services.Configure<SiteConfig>(config.GetSection("SiteConfig"));
 			//services.Configure<VisitDistrictRequest>(config.GetSection("VisitDistrictRequest"));
 
-
-
 			return AutofacConfig.RegisterMVC(services);
 		}
 
@@ -67,20 +65,23 @@ namespace DL.Admin
 		{
 			if (env.IsDevelopment())
 			{
-				app.UseDeveloperExceptionPage();
+				app.UseDeveloperExceptionPage();//启动异常捕获
 			}
 			else
 			{
-				app.UseExceptionHandler("/Home/Error");
+				app.UseExceptionHandler("/Home/Error");//启动异常处理方法
 			}
 
-			app.UseStaticFiles();
-			app.UseCookiePolicy();
-
-			//app.UseHttpsRedirection();
-			//app.UseAuthentication();
-			//app.UseSession();
-
+			app.UseStaticFiles();//启动静态文件
+			//app.UseAuthentication();//启动身份验证
+			app.UseCookiePolicy();//启动cookie策略
+			//app.UseHttpsRedirection();//启动HTTP 请求重定向到 HTTPS
+			//app.UseSession();//启动配置会话
+			//app.UseForwardedHeaders(new ForwardedHeadersOptions()
+			//{//https://www.cnblogs.com/huaxingtianxia/p/6369089.html
+			//	ForwardedHeaders = Microsoft.AspNetCore.HttpOverrides.ForwardedHeaders.XForwardedFor |
+			//					   Microsoft.AspNetCore.HttpOverrides.ForwardedHeaders.XForwardedProto
+			//});
 			app.UseMvc(routes =>
 			{
 				routes.MapRoute(

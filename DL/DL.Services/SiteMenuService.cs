@@ -3,7 +3,7 @@
 *│　描    述：接口实现                                                    
 *│　作    者：duling                                            
 *│　版    本：1.0                                                    
-*│　创建时间：2018-12-29 14:04:25                             
+*│　创建时间：2019-02-24 23:20:39                             
 *└──────────────────────────────────────────────────────────────┘
 */
 
@@ -15,10 +15,10 @@ using System;
 
 namespace DL.Services
 {
-    public class GameServices:BaseServices<Game,Int32>, IGameServices
+    public class SiteMenuServices:BaseServices<SiteMenu,Int32>, ISiteMenuServices
     {
-		private IGameRepository dal;
-		public GameServices(IGameRepository _dal)
+		private ISiteMenuRepository dal;
+		public SiteMenuServices(ISiteMenuRepository _dal)
 		{
 			this.dal = _dal;
 			base.baseDal = dal;

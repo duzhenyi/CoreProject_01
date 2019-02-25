@@ -29,7 +29,7 @@
     <ProjectReference Include="..\DL.IRepository\DL.IRepository.csproj" />
     <ProjectReference Include="..\DL.IService\DL.IServices.csproj" />
     <ProjectReference Include="..\DL.Models\DL.Models.csproj" />
-    <ProjectReference Include="..\DL.Repository.SqlServer\DL.Repository.SqlServer.csproj" />
+    <ProjectReference Include="..\DL.Repository.MySql\DL.Repository.MySql.csproj" />
     <ProjectReference Include="..\DL.Services\DL.Services.csproj" />
   </ItemGroup>
 

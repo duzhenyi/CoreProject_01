@@ -1,7 +1,7 @@
 ﻿using DL.CodeGenerator.Models;
 using DL.Common.Strings;
 using MySql.Data.MySqlClient;
-using Npgsql;
+//using Npgsql;
 using System;
 using System.Collections.Generic;
 using System.Data;
@@ -49,7 +49,7 @@ namespace DL.CodeGenerator.Core
                     connection = new MySqlConnection(strConn);
                     break;
                 case DBType.PostgreSQL:
-                    connection = new NpgsqlConnection(strConn);
+                    //connection = new NpgsqlConnection(strConn);
                     break;
                 default:
                     throw new ArgumentNullException($"暂不支持的{dbType.ToString()}数据库类型");

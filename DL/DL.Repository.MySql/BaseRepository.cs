@@ -10,17 +10,30 @@ using System.Threading.Tasks;
 using Dapper;
 using DL.Common.Config;
 using DL.IRepository;
+using MySql.Data.MySqlClient;
 
-namespace DL.Repository.SqlServer
+namespace DL.Repository.MySql
 {
 	public class BaseRepository<T, TKey> : IBaseRepository<T, TKey> where T : class, new()
 	{
 		public static IDbConnection _dbConnection;
 		static BaseRepository()
 		{
-			if (_dbConnection == null)
+			try
 			{
-				_dbConnection = new SqlConnection(CoreConfig.GetConnectionString("SqlServerConnection"));
+				if (_dbConnection == null)
+				{
+					_dbConnection = new MySqlConnection(CoreConfig.GetConnectionString("SqlConnection"));
+					if (_dbConnection.State == ConnectionState.Closed)
+					{
+						_dbConnection.Open();
+					}
+				}
+			}
+			catch (Exception ex)
+			{
+
+				throw new Exception(ex.Message);
 			}
 		}
 

@@ -3,7 +3,7 @@
 *│　描    述：                                                    
 *│　作    者：duling                                              
 *│　版    本：1.0                                                 
-*│　创建时间：2018-12-28 09:42:34                            
+*│　创建时间：2019-02-24 23:20:39                            
 *└──────────────────────────────────────────────────────────────┘
 */
 
@@ -15,62 +15,41 @@ namespace DL.Models
 {
 	/// <summary>
 	/// duling
-	/// 2018-12-28 09:42:34
+	/// 2019-02-24 23:20:39
 	/// 
 	/// </summary>
 	[Table("UserNote")]
 	public class UserNote
 	{
-		/// <summary>
-		///  
-		/// </summary>
+		[Required]
+		public String Contents {get;set;}
+
+		[Required]
+		public DateTime CreateTime {get;set;}
+
+		[Required]
+		public Int32 CreateType {get;set;}
+
 		[Key]
 		public Int32 Id {get;set;}
 
-		/// <summary>
-		///  
-		/// </summary>
-		public Int32? UserId {get;set;}
-
-		/// <summary>
-		///  
-		/// </summary>
-		public String Title {get;set;}
-
-		/// <summary>
-		///  
-		/// </summary>
 		public String Image {get;set;}
 
-		/// <summary>
-		///  
-		/// </summary>
-		public String Contents {get;set;}
+		[Required]
+		public Int32 IsVerify {get;set;}
 
-		/// <summary>
-		///  
-		/// </summary>
 		public String QQ {get;set;}
 
-		/// <summary>
-		///  
-		/// </summary>
+		[Required]
+		public Int32 SiteMenuId {get;set;}
+
 		public String Tel {get;set;}
 
-		/// <summary>
-		///  
-		/// </summary>
-		public Int32? IsVerify {get;set;}
+		[Required]
+		public String Title {get;set;}
 
-		/// <summary>
-		///  
-		/// </summary>
-		public String ShortUrl {get;set;}
-
-		/// <summary>
-		///  
-		/// </summary>
-		public DateTime? CreatTime {get;set;}
+		[Required]
+		public Int32 UserId {get;set;}
 
 
 	}

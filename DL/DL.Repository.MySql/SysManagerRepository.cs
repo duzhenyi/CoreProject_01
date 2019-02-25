@@ -3,7 +3,7 @@
 *│　描    述：接口实现                                                    
 *│　作    者：duling                                            
 *│　版    本：1.0                                                    
-*│　创建时间：2018-12-29 13:58:45                             
+*│　创建时间：2019-02-24 23:20:39                             
 *└──────────────────────────────────────────────────────────────┘
 */
 
@@ -12,9 +12,9 @@ using DL.Models;
 using Microsoft.Extensions.Options;
 using System;
 
-namespace DL.Repository.SqlServer
+namespace DL.Repository.MySql
 {
-    public class UserRecruitRepository:BaseRepository<UserRecruit,Int32>, IUserRecruitRepository
+    public class SysManagerRepository:BaseRepository<SysManager,Int32>, ISysManagerRepository
     {
  
 

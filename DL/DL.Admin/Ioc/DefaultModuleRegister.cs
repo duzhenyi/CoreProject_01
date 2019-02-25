@@ -26,17 +26,19 @@ namespace DL.Admin.Ioc
 
             var basePath = Microsoft.DotNet.PlatformAbstractions.ApplicationEnvironment.ApplicationBasePath;
 
+			var repositoryDllFile = Path.Combine(basePath, "DL.Repository.MySql.dll");//获取项目绝对路径
+						builder.RegisterAssemblyTypes(Assembly.LoadFile(repositoryDllFile))//直接采用加载文件的方法
+							   .AsImplementedInterfaces()//表示注册的类型，以接口的方式注册
+							   .EnableInterfaceInterceptors()//引用Autofac.Extras.DynamicProxy
+							   .InstancePerLifetimeScope();//即为每一个依赖或调用创建一个单一的共享的实例
+
 			var servicesDllFile = Path.Combine(basePath, "DL.Services.dll");
 			builder.RegisterAssemblyTypes(Assembly.LoadFile(servicesDllFile))
 				   .AsImplementedInterfaces()
 				   .EnableInterfaceInterceptors()
 				   .InstancePerLifetimeScope();
   
-			var repositoryDllFile = Path.Combine(basePath, "DL.Repository.SqlServer.dll");//获取项目绝对路径
-			builder.RegisterAssemblyTypes(Assembly.LoadFile(repositoryDllFile))//直接采用加载文件的方法
-				   .AsImplementedInterfaces()//表示注册的类型，以接口的方式注册
-				   .EnableInterfaceInterceptors()//引用Autofac.Extras.DynamicProxy
-				   .InstancePerLifetimeScope();//即为每一个依赖或调用创建一个单一的共享的实例
+			
 
 		}
     }

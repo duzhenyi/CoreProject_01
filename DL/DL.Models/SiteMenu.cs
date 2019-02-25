@@ -3,7 +3,7 @@
 *│　描    述：                                                    
 *│　作    者：duling                                              
 *│　版    本：1.0                                                 
-*│　创建时间：2018-12-28 09:42:34                            
+*│　创建时间：2019-02-24 23:20:39                            
 *└──────────────────────────────────────────────────────────────┘
 */
 
@@ -15,37 +15,26 @@ namespace DL.Models
 {
 	/// <summary>
 	/// duling
-	/// 2018-12-28 09:42:34
+	/// 2019-02-24 23:20:39
 	/// 
 	/// </summary>
-	[Table("Game")]
-	public class Game
+	[Table("SiteMenu")]
+	public class SiteMenu
 	{
-		/// <summary>
-		///  
-		/// </summary>
+		[Required]
+		public DateTime CreateTime {get;set;}
+
 		[Key]
 		public Int32 Id {get;set;}
 
-		/// <summary>
-		///  
-		/// </summary>
+		[Required]
 		public String Name {get;set;}
 
-		/// <summary>
-		///  
-		/// </summary>
-		public String Image {get;set;}
+		[Required]
+		public Int32 ParentId {get;set;}
 
-		/// <summary>
-		///  
-		/// </summary>
-		public String Url {get;set;}
-
-		/// <summary>
-		///  
-		/// </summary>
-		public DateTime? CreateTime {get;set;}
+		[Required]
+		public Int32 Sort {get;set;}
 
 
 	}

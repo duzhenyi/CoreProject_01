@@ -33,13 +33,13 @@ namespace DL.CodeGenerator
 
             services.Configure<DefineOption>(options =>
             {
-                options.ConnectionString = "Data Source=.;Initial Catalog=DLDB;User ID=sa;Password=123456;Persist Security Info=True;Max Pool Size=50;Min Pool Size=0;Connection Lifetime=300;";
-                options.DBType = DBType.SqlServer.ToString();
+                options.ConnectionString = "Database=mps;Data Source=localhost;User Id=root;Password=root;CharSet=utf8;port=3306";
+                options.DBType = DBType.MySQL.ToString();
                 options.Author = "duling";
                 options.OutputPath = AppContext.BaseDirectory + "\\Code";//模板代码生成的路径
                 options.ModelsNamespace = "DL.Models";//实体命名空间
                 options.IRepositoryNamespace = "DL.IRepository";//仓储接口命名空间
-                options.RepositoryNamespace = "DL.Repository.SqlServer";//仓储命名空间
+                options.RepositoryNamespace = "DL.Repository.MySql";//仓储命名空间
                 options.IServiceNamespace = "DL.IServices";
                 options.ServiceNamespace = "DL.Services";
             });

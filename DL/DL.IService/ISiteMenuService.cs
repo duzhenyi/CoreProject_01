@@ -3,7 +3,7 @@
 *│　描    述：                                                    
 *│　作    者：duling                                              
 *│　版    本：1.0                                                 
-*│　创建时间：2018-12-28 09:42:34                           
+*│　创建时间：2019-02-24 23:20:39                           
 *└──────────────────────────────────────────────────────────────┘
 */
 
@@ -12,7 +12,7 @@ using System;
 
 namespace DL.IServices
 {
-    public interface IUserCommentServices : IBaseServices<UserComment, Int32>
+    public interface ISiteMenuServices : IBaseServices<SiteMenu, Int32>
     {
     }
 }
